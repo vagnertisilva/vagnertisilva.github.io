@@ -1,0 +1,75 @@
+.formacao{
+    background: var(--darkBlue);
+    color: var(--white);
+    padding-top: 100px;
+}
+.formacao-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.formacao-texto{
+    font-size: 1.5rem;
+    line-height: 1.33;
+    margin-bottom: 60px;
+    color: var(--text-muted);
+}
+
+.formacao-texto strong{
+    color: var(--white);
+}
+.faculdade-lista{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+.faculdade{
+    flex: 1;
+    background-color: var(--blue-card);
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;  
+}
+.faculdade-tipo{
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+.faculdade-curso{
+    flex: 1;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    position: relative;
+}
+.faculdade-curso::before{
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    position: absolute;
+    left: -24px;
+}
+.faculdade-instituicao{
+    font-size: 1.125rem;
+    color: var(--text-muted);
+}
+@media (max-width: 800px) {
+    .formacao-container {
+        padding: 0 20px; /* Evita que o conteúdo cole nas bordas */
+    }
+
+    .formacao-texto {
+        font-size: 1.15rem;
+        margin-bottom: 40px;
+    }
+
+    .faculdade-lista {
+        flex-direction: column; /* Empilha os cards um embaixo do outro */
+        gap: 20px;
+    }
+}
+

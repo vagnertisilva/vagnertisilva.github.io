@@ -1,0 +1,85 @@
+.footer{
+    background: var(--darkBlue);
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.footer p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    padding-bottom: 5px;
+}
+
+.footer-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-texto{
+    font-size: 1.5rem;
+    line-height: 1.33;
+    color: var(--text-muted);
+    padding-bottom: 50px;
+}
+.icone-contato{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    padding-bottom: 20px;
+}
+.icone-contato p{
+    font-size: 1.25rem;
+}
+.redes-sociais{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-muted);
+}
+
+.footer-copy{
+    background: var(--blue-timeline);
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@media (max-width: 800px) {
+    .footer-container {
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .icone-contato {
+        justify-content: center; /* Centraliza os ícones de contato */
+    }
+    
+    .redes-sociais {
+        justify-content: center; /* Centraliza as redes sociais */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-texto {
+        font-size: 1.1rem;
+        padding-bottom: 30px;
+    }
+    
+    .icone-contato p {
+        font-size: 1rem;
+    }
+
+    .footer-copy {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+}
+

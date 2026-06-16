@@ -1,0 +1,260 @@
+.principal {
+  /*background: linear-gradient(to right, #060824, #000103);*/
+  background: var(--darkBlue);
+}
+
+.principal-container {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principal h1 {
+  font-size: 4rem;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative; /* Define a posição para permitir z-index */
+  z-index: 2;
+  color: #fff;
+}
+
+.container-foto {
+  box-sizing: border-box;
+}
+
+/* FOTO */
+.foto-perfil-animada {
+  max-width: 300px;
+  max-height: 400px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: flutuar 4s ease-in-out infinite;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* ANIMAÇÕES */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.conteudo {
+  position: relative;
+}
+
+.conteudo h2 {
+  color: #61b8ff;
+}
+
+.btn-contato,
+.btn-curriculo {
+  width: 180px;
+  height: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #1e83d7, #0c2780);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(30, 131, 215, 0.25);
+}
+
+.btn-contato {
+  margin-right: 20px;
+}
+
+.btn-contato:hover,
+.btn-curriculo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(30, 131, 215, 0.4);
+  filter: brightness(1.1);
+}
+
+.conteudo::before {
+  content: "";
+  width: 100px;
+  height: 10px;
+  background: rgb(114, 98, 255);
+  position: absolute;
+  top: 50px;
+  left: -25px;
+  transform: rotate(-35deg);
+  z-index: 1;
+}
+
+.conteudo::after {
+  content: "";
+  width: 100px;
+  height: 10px;
+  background: rgb(93, 29, 211);
+  position: absolute;
+  top: 60px;
+  left: -27px;
+  transform: rotate(-35deg);
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .principal-container h1 {
+    font-size: 3rem;
+  }
+
+  .conteudo::before {
+    width: 60px;
+    height: 10px;
+    top: 38px;
+    left: -10px;
+    transform: rotate(-35deg);
+  }
+
+  .conteudo::after {
+    width: 60px;
+    height: 10px;
+    top: 48px;
+    left: -12px;
+    transform: rotate(-35deg);
+  }
+
+  .foto-perfil-animada {
+    max-width: 200px;
+    max-height: 300px;
+  }
+
+  .conteudo h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 730px) {
+  .container-foto {
+    display: none;
+  }
+
+  .foto-perfil-animada {
+    display: none;
+  }
+
+  .principal-container {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    height: 350px;
+  }
+
+  .btn-contato,
+  .btn-curriculo {
+    width: 150px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .principal-container {
+
+    height: 350px;
+  }
+
+  .principal-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .conteudo {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .conteudo::before {
+    width: 50px;
+    height: 7px;
+    top: 38px;
+    left: -10px;
+    transform: rotate(-35deg);
+  }
+
+  .conteudo::after {
+    width: 50px;
+    height: 7px;
+    top: 45px;
+    left: -12px;
+    transform: rotate(-35deg);
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .principal-container {
+    text-align: center;
+    height: 300px;
+  }
+
+  .principal-container h1 {
+    font-size: 1.9rem;
+  }
+
+  .conteudo h2 {
+    font-size: 13px;
+    padding-bottom: 20px;
+  }
+
+  .btn-contato,
+  .btn-curriculo {
+
+    margin-right: 0px;
+    width: 150;
+
+  }
+
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .btn-contato,
+  .btn-curriculo {
+    margin: 0 auto;
+  }
+
+  .btn-contato {
+    margin-bottom: 15px;
+  }
+
+  .conteudo::before {
+    width: 40px;
+    height: 5px;
+    top: 46px;
+    left: -10px;
+    transform: rotate(-35deg);
+  }
+
+  .conteudo::after {
+    width: 40px;
+    height: 5px;
+    top: 51px;
+    left: -12px;
+    transform: rotate(-35deg);
+  }
+
+
+}

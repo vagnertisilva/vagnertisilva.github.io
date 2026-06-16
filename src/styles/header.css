@@ -1,0 +1,141 @@
+.header {
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0 auto;
+  background: linear-gradient(to right, #060824, #000103);
+  border-bottom: 2px solid #1e83d7;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.header-menu {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-menu li {
+  list-style: none;
+}
+
+.header-menu a {
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 10px 5px;
+  color: #ffffff;
+  display: block;
+  min-width: 100px;
+  text-align: center;
+}
+
+/* Botão hamburguer */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  /* Hambúrguer sempre visível à direita */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    /* acima do menu dropdown */
+  }
+
+  nav {
+    display: none !important;
+  }
+
+  .header-menu a {
+    text-align: center;
+  }
+
+  /* Quando abrir (classe no header), mostramos o nav como dropdown */
+  .header.is-open nav {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    /* logo abaixo do header */
+    background: linear-gradient(to right, #060824, #000103);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    animation: slideDown 200ms ease-out;
+    z-index: 1000;
+  }
+
+  .header.is-open .header-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 8px 0;
+  }
+
+  .header.is-open .header-menu li a {
+    display: block;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Animação de descida */
+@keyframes slideDown {
+  from {
+    transform: translateY(-6px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-menu a {
+    font-size: 0.8rem;
+  }
+
+  .header {
+    padding-top: 40px;
+  }
+}

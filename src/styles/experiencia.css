@@ -1,0 +1,109 @@
+.experiencia {
+    background: var(--darkBlue);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--blue-timeline);
+    top: 0;
+    bottom: 0;
+    left: 20px;
+}
+
+.timeline-item {
+    padding: 10px 0 10px 50px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 12px;
+    top: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.empresa {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.timeline-content ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 800px) {
+    .timeline {
+        padding: 0 20px;
+    }
+    .timeline::after {
+        left: 39px; /* Ajusta a posição da linha vertical */
+    }
+}
+@media (max-width: 600px) {
+    .timeline-content ul li {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .timeline::after {
+        left: 25px;
+    }
+
+    .timeline-item {
+        padding: 10px 10px 10px 20px;
+    }
+
+    .timeline-dot {
+        left: 0; /* Centraliza a bolinha na nova posição da linha */
+        width: 14px;
+        height: 14px;
+    }
+
+    .timeline-content.card {
+        padding: 1.5rem; /* Diminui o padding interno do card */
+    }
+
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+
+    .timeline-content ul li {
+        font-size: 0.80rem;
+    }
+}
+@media (max-width: 400px) {
+
+    .timeline-content.card {
+        padding: 1rem;
+    }
+}

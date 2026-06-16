@@ -1,0 +1,120 @@
+/* --- CONFIGURAÇÕES GERAIS E CORES --- */
+:root {
+    --bg-color: #121212;
+    --bg-card: #1e1e1e;
+    --primary-color: #00bcd4;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --white: #ffffff;
+    --darkBlue: linear-gradient(to right, #060824, #000103);
+    --blue-card: #1f275166;
+    --blue-timeline: #0b112c;
+
+    --body-font: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    color: #141414;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* O segredo do efeito está neste contêiner */
+.titulo-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px; /* Dá espaço para o texto grande do fundo */
+    margin-bottom: 40px;
+}
+
+/* Texto grande e opaco no fundo */
+.titulo-fundo {
+    position: absolute;
+    font-size: 6rem;
+    font-weight: 800;
+    color: #ffffff11; /* Branco com transparência quase invisível */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    z-index: 0; /* Fica atrás */
+    white-space: nowrap; /* Impede que o texto quebre linha */
+}
+
+/* Texto principal na frente */
+.subtitulo {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    z-index: 1; /* Fica na frente */
+    margin: 0;
+}
+
+/* --- CARDS (REUTILIZÁVEIS) --- */
+.card {
+    background-color: var(--blue-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #1f2751;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 750px) {
+    .titulo-wrapper {
+        overflow: hidden; /* Esconde o que passar da tela */
+        width: 100%;
+    }
+
+    .titulo-fundo {
+        font-size: 4rem; /* Reduz um pouco mais para garantir */
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 500px) {
+
+    .titulo-fundo {
+        font-size: 3rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+}
