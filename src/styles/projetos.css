@@ -1,0 +1,117 @@
+.portfolio-section {
+  background-color: #0b0f19; /* Fundo escuro igual da imagem */
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #a8b2d1;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Container das Abas */
+.abas-container {
+  display: flex;
+  justify-content: center;
+  background-color: #1c2333; /* Fundo escuro do menu */
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0 auto 3rem auto;
+  padding: 4px;
+}
+
+.aba-botao {
+  background: transparent;
+  border: none;
+  color: #8892b0;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.aba-botao:hover {
+  color: #ffffff;
+}
+
+/* Estado Ativo da Aba */
+.aba-botao.ativa {
+  background-color: #6366f1; /* Cor primária do botão ativo (roxa/azul) */
+  color: #ffffff;
+}
+
+/* Grid de Projetos */
+.grid-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cartão do Projeto */
+.cartao-projeto {
+  background-color: #112240; /* Fundo do card */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+  border: 1px solid #233554;
+}
+
+.cartao-projeto:hover {
+  transform: translateY(-5px); /* Efeito de elevação leve */
+}
+
+/* Badge (Pílula da categoria no topo esquerdo) */
+.badge-categoria {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #c7d2fe; /* Fundo da tag */
+  color: #3730a3; /* Texto da tag */
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.imagem-container {
+  width: 75%;
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.imagem-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto do Cartão */
+.conteudo-cartao {
+  padding: 20px;
+}
+
+.conteudo-cartao h3 {
+  color: #ccd6f6;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.conteudo-cartao p {
+  color: #8892b0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}

@@ -60,9 +60,9 @@ img {
 /* Texto grande e opaco no fundo */
 .titulo-fundo {
     position: absolute;
-    font-size: 6rem;
+    font-size: 7rem;
     font-weight: 800;
-    color: #ffffff11; /* Branco com transparência quase invisível */
+    color: #ffffff1e; /* Branco com transparência quase invisível */
     text-transform: uppercase;
     letter-spacing: 4px;
     z-index: 0; /* Fica atrás */
@@ -94,18 +94,23 @@ img {
     border-color: var(--primary-color);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
     .titulo-wrapper {
         overflow: hidden; /* Esconde o que passar da tela */
         width: 100%;
     }
 
     .titulo-fundo {
-        font-size: 4rem; /* Reduz um pouco mais para garantir */
+        font-size: 5rem; /* Reduz um pouco mais para garantir */
     }
 
     .subtitulo {
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .titulo-fundo {
+        font-size: 4rem; 
     }
 }
 @media (max-width: 500px) {
@@ -116,5 +121,16 @@ img {
 
     .subtitulo {
         font-size: 1rem;
+    }
+}
+@media (max-width: 350px) {
+
+    .titulo-fundo {
+        font-size: 2rem;
+        color: #ffffff5b;
+    }
+
+    .subtitulo {
+        display: none;
     }
 }
