@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FotoPerfil from "../assets/img05.png";
+import FotoPerfil from "../assets/img05.jpg";
 import {
   FaPhoneAlt,
   FaWhatsapp,
