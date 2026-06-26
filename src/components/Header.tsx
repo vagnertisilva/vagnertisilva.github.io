@@ -60,7 +60,7 @@ export default function Header() {
           ☰
         </div>
 
-        <nav>
+        <nav className="nav-menu">
           <ul className="header-menu">
             <li>
               <Link to="/#inicio" onClick={closeMenu}>Home</Link>
@@ -75,7 +75,7 @@ export default function Header() {
               <Link to="/#formacao" onClick={closeMenu}>Formação</Link>
             </li>
             <li>
-              <Link to="/projetos" onClick={closeMenu}>Meus Projetos</Link>
+              <Link to="/projetos" onClick={closeMenu}>Projetos</Link>
             </li>
             <li>
               <Link to="/#contato" onClick={closeMenu}>Contato</Link>

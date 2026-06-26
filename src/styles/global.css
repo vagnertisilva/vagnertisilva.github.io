@@ -1,6 +1,7 @@
 /* --- CONFIGURAÇÕES GERAIS E CORES --- */
 :root {
     --bg-color: #121212;
+    --bg-black: #0a0a0a;
     --bg-card: #1e1e1e;
     --primary-color: #00bcd4;
     --text-main: #e0e0e0;
@@ -9,16 +10,18 @@
     --darkBlue: linear-gradient(to right, #060824, #000103);
     --blue-card: #1f275166;
     --blue-timeline: #0b112c;
+    --dark-tabs: #1c2333;
 
-    --body-font: 'Poppins', sans-serif;
+    --body-font: Arial, Helvetica, sans-serif;
 }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave */
+    scroll-behavior: smooth;
+    /* Rolagem suave */
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--body-font);
     margin: 0px;
     color: #141414;
 }
@@ -53,7 +56,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 120px; /* Dá espaço para o texto grande do fundo */
+    min-height: 120px;
+    /* Dá espaço para o texto grande do fundo */
     margin-bottom: 40px;
 }
 
@@ -62,11 +66,14 @@ img {
     position: absolute;
     font-size: 7rem;
     font-weight: 800;
-    color: #ffffff1e; /* Branco com transparência quase invisível */
+    color: #ffffff1e;
+    /* Branco com transparência quase invisível */
     text-transform: uppercase;
     letter-spacing: 4px;
-    z-index: 0; /* Fica atrás */
-    white-space: nowrap; /* Impede que o texto quebre linha */
+    z-index: 0;
+    /* Fica atrás */
+    white-space: nowrap;
+    /* Impede que o texto quebre linha */
 }
 
 /* Texto principal na frente */
@@ -75,7 +82,8 @@ img {
     font-size: 2rem;
     font-weight: 600;
     color: #ffffff;
-    z-index: 1; /* Fica na frente */
+    z-index: 1;
+    /* Fica na frente */
     margin: 0;
 }
 
@@ -96,23 +104,27 @@ img {
 
 @media (max-width: 800px) {
     .titulo-wrapper {
-        overflow: hidden; /* Esconde o que passar da tela */
+        overflow: hidden;
+        /* Esconde o que passar da tela */
         width: 100%;
     }
 
     .titulo-fundo {
-        font-size: 5rem; /* Reduz um pouco mais para garantir */
+        font-size: 5rem;
+        /* Reduz um pouco mais para garantir */
     }
 
     .subtitulo {
         font-size: 1.5rem;
     }
 }
+
 @media (max-width: 600px) {
     .titulo-fundo {
-        font-size: 4rem; 
+        font-size: 4rem;
     }
 }
+
 @media (max-width: 500px) {
 
     .titulo-fundo {
@@ -123,7 +135,8 @@ img {
         font-size: 1rem;
     }
 }
-@media (max-width: 350px) {
+
+@media (max-width: 400px) {
 
     .titulo-fundo {
         font-size: 2rem;

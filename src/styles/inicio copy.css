@@ -1,33 +1,56 @@
 .principal {
-  /* Cor de fundo base caso a imagem demore a carregar */
-  background-color: var(--bg-black);
-  
-  /* Configurações para a imagem de fundo preencher o espaço */
-  background-size: auto 105%;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  /* Faz a seção ocupar pelo menos a altura inteira da tela */
-  min-height: 100vh; 
-  display: flex;
-  align-items: center; /* Centraliza o texto verticalmente */
+  /*background: linear-gradient(to right, #060824, #000103);*/
+  background: var(--darkBlue);
 }
 
 .principal-container {
   padding: 40px 20px;
-  /* Removemos o grid-template-columns pois agora temos apenas 1 coluna de texto */
-  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2; /* Garante que o texto fique acima do fundo escuro */
 }
 
 .principal h1 {
   font-size: 4rem;
   line-height: 1.125;
   margin-bottom: 30px;
+  position: relative; /* Define a posição para permitir z-index */
+  z-index: 2;
   color: #fff;
+}
+
+.container-foto {
+  box-sizing: border-box;
+}
+
+/* FOTO */
+.foto-perfil-animada {
+  max-width: 300px;
+  max-height: 400px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: flutuar 4s ease-in-out infinite;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* ANIMAÇÕES */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .conteudo {
@@ -36,7 +59,6 @@
 
 .conteudo h2 {
   color: #61b8ff;
-  margin-bottom: 10px;
 }
 
 .btn-contato,
@@ -66,9 +88,49 @@
   filter: brightness(1.1);
 }
 
+.conteudo::before {
+  content: "";
+  width: 100px;
+  height: 10px;
+  background: rgb(114, 98, 255);
+  position: absolute;
+  top: 50px;
+  left: -25px;
+  transform: rotate(-35deg);
+  z-index: 1;
+}
+
+.conteudo::after {
+  content: "";
+  width: 100px;
+  height: 10px;
+  background: rgb(93, 29, 211);
+  position: absolute;
+  top: 60px;
+  left: -27px;
+  transform: rotate(-35deg);
+  z-index: 1;
+}
+
 @media (max-width: 1000px) {
   .principal-container h1 {
     font-size: 3rem;
+  }
+
+  .conteudo::before {
+    width: 60px;
+    height: 10px;
+    top: 38px;
+    left: -10px;
+    transform: rotate(-35deg);
+  }
+
+  .conteudo::after {
+    width: 60px;
+    height: 10px;
+    top: 48px;
+    left: -12px;
+    transform: rotate(-35deg);
   }
 
   .foto-perfil-animada {
@@ -121,6 +183,22 @@
     margin: 0 auto;
   }
 
+  .conteudo::before {
+    width: 50px;
+    height: 7px;
+    top: 38px;
+    left: -10px;
+    transform: rotate(-35deg);
+  }
+
+  .conteudo::after {
+    width: 50px;
+    height: 7px;
+    top: 45px;
+    left: -12px;
+    transform: rotate(-35deg);
+  }
+
 }
 
 @media (max-width: 400px) {
@@ -160,6 +238,22 @@
 
   .btn-contato {
     margin-bottom: 15px;
+  }
+
+  .conteudo::before {
+    width: 40px;
+    height: 5px;
+    top: 46px;
+    left: -10px;
+    transform: rotate(-35deg);
+  }
+
+  .conteudo::after {
+    width: 40px;
+    height: 5px;
+    top: 51px;
+    left: -12px;
+    transform: rotate(-35deg);
   }
 
 

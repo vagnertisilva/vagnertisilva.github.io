@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FotoPerfil from "../assets/vagner-logo.png";
+import FotoPerfil from "../assets/img05.png";
 import {
   FaPhoneAlt,
   FaWhatsapp,
@@ -23,7 +23,18 @@ export default function Portifolio() {
   return (
     <>
       <span className="inicio" id="inicio" aria-label="Home"></span>
-      <main className="principal" id="principal" aria-label="Introdução-Inicial">
+      <main
+        className="principal"
+        id="principal"
+        aria-label="Introdução-Inicial"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.3) 50%, rgba(10, 10, 10, 0.95) 100%),
+            linear-gradient(to bottom, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 1) 100%),
+            url(${FotoPerfil})
+          `
+        }}
+      >
         <div className="principal-container">
           <div className="conteudo">
             <h2>DESENVOLVEDOR FULL STACK</h2>
@@ -53,13 +64,7 @@ export default function Portifolio() {
             </a>
           </div>
 
-          <div className="container-foto">
-            <img
-              src={FotoPerfil}
-              alt="Foto de perfil do Vagner Silva"
-              className="foto-perfil-animada"
-            />
-          </div>
+          {/* 2. REMOVIDO: A div "container-foto" e a tag <img> foram removidas daqui */}
         </div>
       </main>
 
@@ -106,39 +111,6 @@ export default function Portifolio() {
                 <li><FaArrowRight /> Banco de dados (SQL, backup e recuperação).</li>
                 <li><FaArrowRight /> Gestão de Redes e hardware.</li>
                 <li><FaArrowRight /> Atuação com Sistemas ERP.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="timeline">
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-date">2017 - 2021</div>
-            <div className="timeline-content card">
-              <h4>Cartazista</h4>
-              <p className="empresa">Rancho Supermercado</p>
-              <ul>
-                <li><FaArrowRight /> confecção de cartazes promocionais</li>
-                <li><FaArrowRight /> Caligrafia profissional</li>
-                <li><FaArrowRight /> Treinamento e capacitação de novos cartazistas</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="timeline">
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-date">2014 - 2017</div>
-            <div className="timeline-content card">
-              <h4>Cartazista</h4>
-              <p className="empresa">Mateus Supermercado</p>
-              <ul>
-                <li><FaArrowRight /> confecção de cartazes promocionais, informativos e de precificação</li>
-                <li><FaArrowRight /> Caligrafia profissional</li>
               </ul>
             </div>
           </div>
@@ -211,7 +183,9 @@ export default function Portifolio() {
       </section>
 
       <section className="portfolio-section">
-        <h2 className="titulo-secao">MEUS PROJETOS</h2>
+        <div className="titulo-wrapper">
+          <span className="titulo-fundo">PROJETOS</span>
+        </div>
 
         {/* Navegação de Abas */}
         <nav className="abas-container">
@@ -229,7 +203,7 @@ export default function Portifolio() {
         {/* Grid de Projetos */}
         <div className="grid-projetos">
           {projetosFiltrados.map((projeto) => (
-            <article key={projeto.id} className="cartao-projeto">
+            <article key={projeto.id} className="cartao-projeto card">
 
               {/* Tag/Badge da Categoria */}
               <span className="badge-categoria">

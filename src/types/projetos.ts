@@ -1,5 +1,8 @@
 export type CategoriaProjeto = 'Front End' | 'Back End' | 'Full Stack';
-import imgFinancas from '../assets/imgid04.png';
+import imgFinancas from '../assets/img04.png';
+import imgRotas from '../assets/img03.png';
+import imgSite from '../assets/img02.png';
+import imgApp from '../assets/img01.png';
 
 export interface Projeto {
   id: number;
@@ -13,29 +16,29 @@ export interface Projeto {
 export const projetosMock: Projeto[] = [
   {
     id: 1,
-    titulo: 'Portfolio Open Source',
-    descricao: 'Este é um portfólio desenvolvido para beneficiar desenvolvedores que ainda não têm seu portfólio.',
+    titulo: 'ROTAS DE NAVEGAÇÃO',
+    descricao: 'Aplicativo desenvolvido em React Native com foco nos principais padrões de navegação, incluindo Stack, Tab e Drawer Navigation.',
     categoria: 'Front End',
-    imagemUrl: 'https://via.placeholder.com/400x200/5A4FCF/FFFFFF?text=Imagem+do+Projeto'
+    imagemUrl: imgRotas
   },
   {
     id: 2,
-    titulo: 'YRprey',
-    descricao: 'Um site modelo que simula diversas vulnerabilidades e falhas de segurança.',
+    titulo: '+100 Projetos Web',
+    descricao: 'Mais de 100 projetos desenvolvidos para praticar e aprimorar habilidades em desenvolvimento web. Utilizando HTML, CSS, JavaScript e alguns projetos com React Native.',
     categoria: 'Front End',
-    imagemUrl: 'https://via.placeholder.com/400x200/1A1A1A/FF0000?text=YRprey'
+    imagemUrl: imgSite
   },
   {
     id: 3,
-    titulo: 'User crud',
-    descricao: 'Este é um crud de usuário que visa facilitar o acesso com funcionalidades básicas.',
+    titulo: 'APP ORGANIZADOR DE DESPESAS',
+    descricao: 'Aplicativo criado para o gerenciamento de despesas pessoais. O projeto utiliza React Native, TypeScript, SQLite e AsyncStorage, servindo como um exemplo completo de integração com banco de dados em aplicações mobile.',
     categoria: 'Back End',
-    imagemUrl: 'https://via.placeholder.com/400x200/0A192F/00D8FF?text=API'
+    imagemUrl: imgApp
   },
   {
     id: 4,
     titulo: 'SISTEMA DE FINANÇAS',
-    descricao: 'Plataforma de controle financeiro desenvolvida para facilitar a tomada de decisão. Conta com dashboards interativos, gráficos de despesas, fluxo de caixa detalhado e categorização inteligente de gastos e receitas.',
+    descricao: 'Meu principal projeto: um sistema de gestão financeira desenvolvido para facilitar o controle de receitas e despesas. Possui dashboards interativos, gráficos, fluxo de caixa detalhado e categorização inteligente para uma visão completa das finanças.',
     categoria: 'Full Stack',
     imagemUrl: imgFinancas
   }
