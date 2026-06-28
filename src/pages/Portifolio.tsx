@@ -185,6 +185,7 @@ export default function Portifolio() {
       <section className="portfolio-section">
         <div className="titulo-wrapper">
           <span className="titulo-fundo">PROJETOS</span>
+          <h2 className="subtitulo">Meus Projetos</h2>
         </div>
 
         {/* Navegação de Abas */}
