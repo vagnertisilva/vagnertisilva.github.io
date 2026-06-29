@@ -15,7 +15,7 @@ export default function Projetos() {
 
   return (
     <main>
-      <section className="portfolio-section">
+      <section className="portfolio-section" style={{ paddingBottom: 50 }}>
         <div className="titulo-wrapper">
           <span className="titulo-fundo">PROJETOS</span>
           <h2 className="subtitulo">Meus Projetos</h2>
@@ -51,6 +51,18 @@ export default function Projetos() {
               <div className="conteudo-cartao">
                 <h3>{projeto.titulo}</h3>
                 <p>{projeto.descricao}</p>
+                
+                {projeto.linkUrl && (
+                  <a
+                    href={projeto.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-acessar-projeto"
+                  >
+                    Acessar Sistema
+                  </a>
+                )}
+
               </div>
             </article>
           ))}

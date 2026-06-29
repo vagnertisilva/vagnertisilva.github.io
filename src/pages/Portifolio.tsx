@@ -218,6 +218,18 @@ export default function Portifolio() {
               <div className="conteudo-cartao">
                 <h3>{projeto.titulo}</h3>
                 <p>{projeto.descricao}</p>
+
+                {projeto.linkUrl && (
+                  <a
+                    href={projeto.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-acessar-projeto"
+                  >
+                    Acessar Sistema
+                  </a>
+                )}
+                
               </div>
             </article>
           ))}

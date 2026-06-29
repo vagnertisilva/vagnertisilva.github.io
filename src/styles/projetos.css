@@ -95,6 +95,25 @@
   line-height: 1.5;
   margin: 0;
 }
+.btn-acessar-projeto {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #1e83d7, #0c2780);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(30, 131, 215, 0.2);
+}
+
+.btn-acessar-projeto:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(30, 131, 215, 0.4);
+  filter: brightness(1.1);
+}
 
 @media (max-width: 800px) {
   .grid-projetos {
