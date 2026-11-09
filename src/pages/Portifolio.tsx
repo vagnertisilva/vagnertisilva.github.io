@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ParticlesBackground from '../components/ParticlesBackground';
+import useScrollReveal from '../hooks/useScrollReveal';
 import FotoPerfil from "../assets/img05.jpg";
 import {
   FaPhoneAlt,
@@ -14,6 +17,7 @@ import { projetosMock } from '../types/projetos';
 const categoriasAbas = ['Todos Os Projetos', 'Front End', 'Back End', 'Full Stack'];
 
 export default function Portifolio() {
+  useScrollReveal();
   const [abaAtiva, setAbaAtiva] = useState<string>('Todos Os Projetos');
   // Lógica de filtragem: se for "Todos", mostra tudo. Se não, filtra pela categoria.
   const projetosFiltrados = abaAtiva === 'Todos Os Projetos'
@@ -35,6 +39,7 @@ export default function Portifolio() {
           `
         }}
       >
+        <ParticlesBackground />
         <div className="principal-container">
           <div className="conteudo">
             <h2>DESENVOLVEDOR FULL STACK</h2>
@@ -202,7 +207,7 @@ export default function Portifolio() {
         </nav>
 
         {/* Grid de Projetos */}
-        <div className="grid-projetos">
+        <div className="grid-projetos" key={abaAtiva}>
           {projetosFiltrados.map((projeto) => (
             <article key={projeto.id} className="cartao-projeto card">
 
@@ -219,14 +224,18 @@ export default function Portifolio() {
                 <h3>{projeto.titulo}</h3>
                 <p>{projeto.descricao}</p>
 
-                {projeto.linkUrl && (
+                {projeto.linkUrl?.startsWith('/') ? (
+                  <Link to={projeto.linkUrl} className="btn-acessar-projeto">
+                    {projeto.linkTexto ?? 'Acessar Sistema'}
+                  </Link>
+                ) : projeto.linkUrl && (
                   <a
                     href={projeto.linkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-acessar-projeto"
                   >
-                    Acessar Sistema
+                    {projeto.linkTexto ?? 'Acessar Sistema'}
                   </a>
                 )}
                 

@@ -39,9 +39,11 @@ export default function Header() {
     if (hash) {
       const elemento = document.getElementById(hash.replace("#", ""));
       if (elemento) {
-        setTimeout(() => {
-          elemento.scrollIntoView({ behavior: "smooth" });
+        const timeout = setTimeout(() => {
+          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          elemento.scrollIntoView({ behavior: reducedMotion ? "instant" : "smooth" });
         }, 100);
+        return () => clearTimeout(timeout);
       }
     }
   }, [hash]);

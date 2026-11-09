@@ -11,6 +11,7 @@ export interface Projeto {
   categoria: CategoriaProjeto;
   imagemUrl: string;
   linkUrl?: string;
+  linkTexto?: string;
 }
 
 // dados simulados
@@ -25,11 +26,12 @@ export const projetosMock: Projeto[] = [
   },
   {
     id: 2,
-    titulo: '+100 Projetos Web',
-    descricao: 'Mais de 100 projetos desenvolvidos para praticar e aprimorar habilidades em desenvolvimento web. Utilizando HTML, CSS, JavaScript e alguns projetos com React Native.',
+    titulo: 'Laboratório Front-end',
+    descricao: 'Experimentos interativos de interfaces, layouts e animações desenvolvidos com React, TypeScript e CSS. Explore telas de login, posicionamento, carrossel, cards e textos animados.',
     categoria: 'Front End',
     imagemUrl: imgSite,
-    linkUrl: 'https://github.com/vagnertisilva/'
+    linkUrl: '/laboratorio',
+    linkTexto: 'Explorar exemplos'
   },
   {
     id: 3,

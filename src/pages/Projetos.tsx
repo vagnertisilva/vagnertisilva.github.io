@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import useScrollReveal from '../hooks/useScrollReveal';
 // Certifique-se de que o caminho de importação aponta para o arquivo correto dos tipos/mocks
 import { projetosMock } from '../types/projetos'; // ou '../projetos' dependendo da sua pasta
 
 const categoriasAbas = ['Todos Os Projetos', 'Front End', 'Back End', 'Full Stack'];
 
 export default function Projetos() {
+  useScrollReveal();
   // Lógica de estado para controlar a aba selecionada
   const [abaAtiva, setAbaAtiva] = useState<string>('Todos Os Projetos');
 
@@ -35,7 +38,7 @@ export default function Projetos() {
         </nav>
 
         {/* Grid de Projetos */}
-        <div className="grid-projetos">
+        <div className="grid-projetos" key={abaAtiva}>
           {projetosFiltrados.map((projeto) => (
             <article key={projeto.id} className="cartao-projeto card">
 
@@ -52,14 +55,18 @@ export default function Projetos() {
                 <h3>{projeto.titulo}</h3>
                 <p>{projeto.descricao}</p>
                 
-                {projeto.linkUrl && (
+                {projeto.linkUrl?.startsWith('/') ? (
+                  <Link to={projeto.linkUrl} className="btn-acessar-projeto">
+                    {projeto.linkTexto ?? 'Acessar Sistema'}
+                  </Link>
+                ) : projeto.linkUrl && (
                   <a
                     href={projeto.linkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-acessar-projeto"
                   >
-                    Acessar Sistema
+                    {projeto.linkTexto ?? 'Acessar Sistema'}
                   </a>
                 )}
 
